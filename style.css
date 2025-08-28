@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #1a103d; /* dark purple */
+  color: #2c2c2c;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #d1a693; /* light brown */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+}
+
+.section-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2d3b69;
+}
+
+.radio {
+  display: block;
+  margin: 5px 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-primary {
+  background: #1f2c73; /* dark blue */
+  color: white;
+}
+
+.btn-secondary {
+  background: #6b2d2d; /* dark red */
+  color: white;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #475569;
+  color: #2c2c2c;
+}
+
+.controls {
+  margin-top: 15px;
+}
+
+.control {
+  margin-bottom: 10px;
+}
+
+.label-wrap {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+/* Stage */
+.stage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  background: #1a103d; /* dark purple background */
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+}
+
+.bar {
+  background: #d8b8f5; /* default light purple bars */
+  margin: 0 1px;
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  transition: background 0.2s ease;
+}
+
+/* Bar States */
+.bar.comparing {
+  background: #facc15; /* yellow when comparing */
+}
+
+.bar.swapping {
+  background: #ef4444; /* red when swapping */
+}
+
+.bar.sorted {
+  background: #22c55e; /* green when sorted */
+}
+
+.bar.pivot {
+  background: #3b82f6; /* blue pivot */
+}
+
+/* Info Panel */
+.info {
+  width: 300px;
+  background: #f7b4a5; /* lighter brown/pinkish */
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.info h3, .info h4 {
+  color: #2d3b69;
+}
+
+.muted {
+  color: #333;
+  font-size: 14px;
+}
+
+.complexity table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+.complexity th, .complexity td {
+  border: 1px solid #444;
+  padding: 4px;
+  text-align: center;
+}
+
+.code-section pre {
+  background: #1a103d;
+  border: 1px solid #243047;
+  border-radius: 10px;
+  padding: 10px;
+  overflow: auto;
+  font-size: 13px;
+  color: #d8b8f5;
+  white-space: pre-wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Main app container */
+  .app {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Sidebars should take full width on small screens */
+  .sidebar,
+  .info {
+    width: 100%;
+    border-bottom: 2px solid #2d3b69; /* Optional: add a separator line */
+    padding: 15px;
+  }
+
+  /* Stage should also take full width and height can be more controlled */
+  .stage {
+    width: 100%;
+    padding: 10px;
+    height: 60vh; /* Adjust height for better viewing on mobile */
+  }
+
+  /* Toolbar buttons to wrap if needed */
+  .toolbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn {
+    flex: 1 1 auto; /* Allows buttons to grow and shrink */
+    max-width: 150px;
+  }
+
+  /* Reduce padding on the info panel for a tighter look */
+  .info {
+    padding: 10px;
+  }
+
+  /* Adjust font sizes for readability on smaller screens */
+  .section-title {
+    font-size: 16px;
+  }
+
+  .muted,
+  .code-section pre,
+  .complexity table {
+    font-size: 12px;
+  }
+}

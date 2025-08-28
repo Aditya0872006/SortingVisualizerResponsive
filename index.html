@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorting Visualizer — Dark</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="toolbar">
+        <button id="sortBtn" class="btn btn-primary">SORT ▶</button>
+        <button id="stopBtn" class="btn btn-secondary">STOP ⏹</button>
+        <button id="shuffleBtn" class="btn btn-secondary">SHUFFLE ⛶</button>
+        <button id="resetBtn" class="btn btn-ghost">Reset</button>
+      </div>
+
+      <h3 class="section-title">Algorithms</h3>
+      <div class="algos">
+        <label class="radio">
+          <input type="radio" name="algo" value="selection">
+          <span>Selection Sort</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="algo" value="insertion">
+          <span>Insertion Sort</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="algo" value="bubble" checked>
+          <span>Bubble Sort</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="algo" value="merge">
+          <span>Merge Sort</span>
+        </label>
+      </div>
+
+      <div class="controls">
+        <div class="control">
+          <div class="label-wrap">
+            <label for="speedRange">Animation Speed</label>
+            <span class="muted">⏱ faster →</span>
+          </div>
+          <input type="range" id="speedRange" min="1" max="100" value="60" />
+        </div>
+        <div class="control">
+          <div class="label-wrap">
+            <label for="barsRange">Number of bars</label>
+            <span class="muted">≡</span>
+          </div>
+          <input type="range" id="barsRange" min="10" max="250" value="120" />
+        </div>
+      </div>
+    </aside>
+
+    <main class="stage">
+      <div id="bar-container" class="bars"></div>
+    </main>
+
+    <aside class="info">
+      <h3 id="infoTitle">Algorithm Information</h3>
+      <p id="infoText" class="muted"></p>
+
+      <div class="complexity">
+        <h4>Time & Space Complexity</h4>
+        <table>
+          <tr><th>Case</th><th>Time</th></tr>
+          <tr><td>Best</td><td id="best"></td></tr>
+          <tr><td>Average</td><td id="avg"></td></tr>
+          <tr><td>Worst</td><td id="worst"></td></tr>
+          <tr><td>Space</td><td id="space"></td></tr>
+        </table>
+      </div>
+
+      <div class="pros-cons">
+        <h4>Pros</h4>
+        <ul id="infoPros"></ul>
+        <h4>Cons</h4>
+        <ul id="infoCons"></ul>
+      </div>
+
+      <div class="code-section">
+        <h4>Pseudocode</h4>
+        <pre><code id="pseudo"></code></pre>
+
+        <h4>C++</h4>
+        <pre><code id="cpp"></code></pre>
+
+        <h4>Java</h4>
+        <pre><code id="java"></code></pre>
+      </div>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
